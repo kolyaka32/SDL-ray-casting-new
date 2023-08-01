@@ -1,7 +1,6 @@
 #include <SDL.h>
 #include <cmath>
 #include <vector>
-#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -50,9 +49,7 @@ class Player{
 // Functions
 // Function of initialasing of SDL and other libraries
 void SDL_init(){
-    if( SDL_Init(SDL_INIT_VIDEO) != 0)  // Initializing SDL as Video
-    {std::cout << "SDL_INIT_VIDEO_ERROR" << SDL_Error; }  // Init 
-           
+    SDL_Init(SDL_INIT_VIDEO);  // Initializing SDL as Video
     SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);      // setting draw color
     SDL_RenderClear(renderer);      // Clear the newly created window
@@ -127,7 +124,6 @@ void WallDraw(int x, int h){
 
     SDL_SetRenderDrawColor(renderer, 10, 10, h * 256 / HEIGHT, 20);  // Setting color depens on height
     SDL_RenderDrawLine(renderer, x, y+1, x, (HEIGHT-y-1));
-    
 };
 
 // Drawing map at screen
