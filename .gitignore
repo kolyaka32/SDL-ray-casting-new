@@ -1,0 +1,10 @@
+cmake/
+i686-w64-mingw32/
+x86_64-w64-mingw32/
+
+build/.cmake
+build/CMakeFiles
+build/cmake_install.cmake
+build/CMakeCache.txt
+build/compile_commands.json
+build/Makefile
